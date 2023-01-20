@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="ContenteDetalhes">
-        <div class="detalhes">
+        <div class="detalhesCarros">
             @if (isset($carro))
                 <div class="carrodetalhes">
                     {{-- <a href="/carros/{{ $carro->id }}"></a> --}}

@@ -33,26 +33,29 @@
 
                     <div class="inputs">
 
-                        <input class="inputText" type="text" id="matricula" name="matricula" placeholder="Matricula"
+                        <input class="inputCarros" type="text" id="matricula" name="matricula" placeholder="Matricula"
                             @if (isset($carro)) value="{{ $carro->matricula }}" @endif>
                         <br>
 
 
-                        <input class="inputText" type="text" id="marca" name="marca" placeholder="Marca"
+                        <input class="inputCarros" type="text" id="marca" name="marca" placeholder="Marca"
                             @if (isset($carro)) value="{{ $carro->marca }}" @endif>
                         <br>
 
-                        <input class="inputText" type="text" id="combustivel" name="combustivel"
+                        <input class="inputCarros" type="text" id="combustivel" name="combustivel"
                             placeholder="Combustivel"
                             @if (isset($carro)) value="{{ $carro->combustivel }}" @endif>
                         <br>
 
-                        <input class="inputText" type="text" id="lugares" name="lugares" placeholder="Lugares"
+                        <input class="inputCarros" type="text" id="lugares" name="lugares" placeholder="Lugares"
                             @if (isset($carro)) value="{{ $carro->lugares }}" @endif>
                         <br>
 
-                        <input class="inputText" type="text" id="portas" name="portas" placeholder="Portas"
+                        <input class="inputCarros" type="text" id="portas" name="portas" placeholder="Portas"
                             @if (isset($carro)) value="{{ $carro->portas }}" @endif>
+                        <br>
+                        <input class="inputCarros" type="text" id="preco" name="preco" placeholder="Preço"
+                            @if (isset($carro)) value="{{ $carro->preco }}" @endif>
                         <br>
                         <input type="hidden" id="changed" name="changed" value="false">
                         <label for="url">URL: </label>

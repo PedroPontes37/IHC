@@ -29,6 +29,7 @@ class EditCarRequest extends FormRequest
               'combustivel'=>'required',
               'lugares'=>'required',
               'portas'=>'required',
+              'preco'=>'required',
               'url'=>'image|mimes:jpeg,png,jpg,gif|max:2048'
             ];
     }
@@ -41,6 +42,7 @@ class EditCarRequest extends FormRequest
           'combustivel.required'=>'O tipo de combustivel é obrigatorio',
           'lugares.required'=>'O numero de lugares é obrigatorio',
           'portas.required'=>'O numero de portas é obrigatorio',
+         'preco.required'=>'O preço é obrigatorio',
           'url.image'=>'A imagem deve ser uma imagem',
           'url.mimes'=>'A imagem pode ser jpeg,png,jpg,gif.',
           'url.max'=>'A imagem não pode exceder 2MB',

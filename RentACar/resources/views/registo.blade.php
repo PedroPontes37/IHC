@@ -10,7 +10,7 @@
             <div class="sistemaRegisto">
 
                 <div class="col-md-6">
-                    <input class="inputText" type="text" class="form-control @error('name') is-invalid @enderror"
+                    <input class="inputTypes" type="text" class="form-control @error('name') is-invalid @enderror"
                         name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nome">
 
                     @error('name')
@@ -25,7 +25,7 @@
 
 
                     <div class="col-md-6">
-                        <input class="inputText" type="email" class="form-control @error('email') is-invalid @enderror"
+                        <input class="inputTypes" type="email" class="form-control @error('email') is-invalid @enderror"
                             name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
                         @error('email')
@@ -40,7 +40,7 @@
 
 
                     <div class="col-md-6">
-                        <input class="inputText" type="password"
+                        <input class="inputTypes" type="password"
                             class="form-control @error('password') is-invalid @enderror" name="password" required
                             autocomplete="new-password" placeholder="Password">
 
@@ -55,7 +55,7 @@
                 <div class="row mb-3">
 
                     <div class="col-md-6">
-                        <input class="inputText" type="password" class="form-control" name="password_confirmation" required
+                        <input class="inputTypes" type="password" class="form-control" name="password_confirmation" required
                             autocomplete="new-password" placeholder="Confirmar Password">
                     </div>
                 </div>

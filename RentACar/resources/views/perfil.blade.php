@@ -6,9 +6,11 @@
         <div class="perfil">
             <img id="imgLogin" src="/img/login.png" alt="">
             <h3> Olá, {{ Auth::user()->name }}</h3>
-            <button class="buttonsPerfil"> <a href="/datas" class="aPerfil">Fazer Novo Aluguer</a></button>
-            <button class="buttonsPerfil">Fazer Novo Aluguer</button>
-            <button class="buttonsPerfil">Consultar Alugueres</button>
+            <button class="buttonsPerfil"><a id="Login" href="/datas">
+                    Fazer Novo Aluguer</a></button>
+
+            <button class="buttonsPerfil"><a id="Login" href="{{ route('carros.alugueres') }}">
+                    Consultar Alugueres</a></button>
             @if (auth()->user()->IsAdmin)
                 <button class="buttonsPerfil"><a id="Login" href="{{ route('carros.create') }}">
                         Adicionar Carro</a></button>

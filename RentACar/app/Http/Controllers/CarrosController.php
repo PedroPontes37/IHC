@@ -25,21 +25,13 @@ class CarrosController extends Controller
 
      public function store(NewCarRequest $request)
     {
-        // $validateData= $request->validate([
-        //   'matricula'=>'required',
-        //   'marca'=>'required',
-        //   'combustivel'=>'required',
-        //   'lugares'=>'required',
-        //   'portas'=>'required',
-        //   'url'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048'
-        // ]);
-
 
         $matricula=request('matricula');
         $marca=request('marca');
         $combustivel=request('combustivel');
         $lugares=request('lugares');
         $portas=request('portas');
+        $preco=request('preco');
 
         $url="";
         if($request->has('url')){
@@ -62,6 +54,7 @@ class CarrosController extends Controller
         $carro->lugares=$lugares;
         $carro->portas=$portas;
         $carro->url=$url;
+        $carro->preco=$preco;
 
         $carro->save();
 
@@ -89,6 +82,7 @@ class CarrosController extends Controller
         $combustivel=request('combustivel');
         $lugares=request('lugares');
         $portas=request('portas');
+        $preco=request('preco');
 
 
         $changed= (request('changed')=="true")?1:0;
@@ -122,6 +116,7 @@ class CarrosController extends Controller
         $carro->combustivel=$combustivel;
         $carro->lugares=$lugares;
         $carro->portas=$portas;
+        $carro->preco=$preco;
 
 
 
@@ -130,4 +125,35 @@ class CarrosController extends Controller
         return redirect("/carros/$id")->with('mssg','Carro Alterado');
 
     }
+
+
+    public function carrosByFiltros(Request $request)
+    {
+
+        $marcaR =request('marca');
+        $combustivelR =request('combustivel');
+        $lugaresR =request('lugares');
+        $portasR =request('portas');
+        $SearchX = Carro::where('marca', $marcaR)->where('lugares', $lugaresR)->where('portas', $portasR)->where('combustivel',$combustivelR)->get();
+
+        $carros= $SearchX;
+        if(isset($SearchX) && count($SearchX) > 0)
+        {
+
+            $carros= $SearchX;
+        }
+        else{
+            echo '<script>alert("Nenhum carro encontrado")</script>';
+        }
+
+        return view('carros',['carros'=>$carros]);
+    }
+
+
+    public function oneCar(){
+        $carro = Carro::inRandomOrder()->limit(1)->get();
+        return view('alugueres',['carro'=>$carro]);
+    }
+
+
 }

@@ -6,9 +6,10 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
+
             <div class="sistemalogin">
                 <div class="col-md-6">
-                    <input class="inputText" type="email" placeholder="Email"
+                    <input class="inputTypes" type="email" placeholder="Email"
                         class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"
                         required autocomplete="email" autofocus>
 
@@ -25,7 +26,7 @@
                                     class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label> --}}
 
                     <div class="col-md-6">
-                        <input class="inputText" type="password" placeholder="Password"
+                        <input class="inputTypes" type="password" placeholder="Password"
                             class="form-control @error('password') is-invalid @enderror" name="password" required
                             autocomplete="current-password">
 

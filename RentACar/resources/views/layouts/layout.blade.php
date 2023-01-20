@@ -6,55 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Document</title>
+    <title>RentACar</title>
 </head>
 
+
+<header>
+    <div class="subHeader">
+        <a href="/" id="logo"> <img src="/img/logo.png" style="height:50px"></a>
+
+        @guest
+            @if (Route::has('login'))
+                <button class="buttonLogin"><a id="Login" href="{{ route('login') }}">{{ __('Login') }}</a></button>
+            @endif
+        @else
+            <button class="buttonLogin"> <a id="Login" href="/perfil">
+                    {{ Auth::user()->name }}
+                </a></button>
+
+        @endguest
+    </div>
+
+
+
+</header>
+
 <body>
-    <header>
-        <div class="subHeader">
-            <a href="/" id="logo"> <img src="/img/logo.png" style="height:50px"></a>
-
-            @guest
-                @if (Route::has('login'))
-                    <button class="buttonLogin"><a id="Login"
-                            href="{{ route('login') }}">{{ __('Login') }}</a></button>
-                @endif
-            @else
-                <button class="buttonLogin"> <a id="Login" href="/perfil">
-                        {{ Auth::user()->name }}
-                    </a></button>
-
-            @endguest
-        </div>
-
-
-
-    </header>
-
-
     <div id="contentArea">
         @yield('content')
     </div>
-    <footer class="footerBox">
-        <div class="contFooter">
-            <div class="contacto">
-                <p>CONTACTO</p>
-                <p>Tlm.:291 291 291</p>
-            </div>
-            <div class="contacto">
-                <p>LOCALIZAÇÃO</p>
-                <p>Funchal,Monte</p>
-            </div>
-        </div>
-    </footer>
 </body>
+
+<footer class="footerBox">
+    <div class="contFooter">
+        <div class="contacto">
+            <p>CONTACTO</p>
+            <p>Tlm.:291 291 291</p>
+        </div>
+        <div class="contacto">
+            <p>LOCALIZAÇÃO</p>
+            <p>Funchal,Monte</p>
+        </div>
+    </div>
+</footer>
 
 </html>
 
 <style>
-    .footerBox {
-        margin: 0px;
-    }
+    .footerBox {}
 
     body {
         background-color: #EFEDFF;
@@ -101,6 +99,7 @@
 
     footer {
 
+        margin: 0px;
         position: relative;
         bottom: 0;
         width: 100%;
